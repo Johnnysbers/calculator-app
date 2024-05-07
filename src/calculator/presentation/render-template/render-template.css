@@ -50,6 +50,10 @@
     user-select: text;
 }
 
+.output .current-op::selection {
+    background-color: #4c4a48;
+}
+
 .op {
     background-color: #323232;
     color: #fff;
