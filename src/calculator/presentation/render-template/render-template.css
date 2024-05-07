@@ -3,10 +3,10 @@
     justify-content: center;
     align-content: center;
     grid-template-columns: repeat(4, 80px);
-    grid-template-rows: minmax(100px, auto) repeat(5, 53px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 53px);
     background-color: #202020;
-    width: 325px;
-    height: 369px;
+    width: 326px;
+    height: 390px;
     margin: 0 auto;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -19,24 +19,17 @@
     border: 0;
     border-radius: 5px;
     outline: none;
-    background-color: #323232;
     color: #fff;
-    margin: 1.15px;
-}
-
-.span-two {
-    grid-column: span 2;
+    margin: 1px;
 }
 
 .output {
     grid-column: 1 / -1;
     display: flex;
+    flex-direction: column;
     align-items: flex-end;
     justify-content: space-around;
-    flex-direction: column;
     padding: 10px;
-    word-wrap: break-word;
-    word-break: break-all;
 }
 
 .output .prev-op {
@@ -54,22 +47,21 @@
     background-color: #4c4a48;
 }
 
-.op {
+.operator {
     background-color: #323232;
-    color: #fff;
 }
 
-.calc-template .number {
+.number {
     background-color: #3b3b3b;
     color: #fff;
 }
 
 .calc-template .equal {
     background-color: #848381;
-    color: #222121;
+    color: #252524;
 }
 
-.op:hover {
+.operator:hover {
     background-color: #3b3b3b;
 }
 
