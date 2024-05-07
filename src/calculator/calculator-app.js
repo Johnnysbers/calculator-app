@@ -1,7 +1,9 @@
+import { renderTemplate } from './presentation/render-template/render-template';
+
 /**
  * 
  * @param {HTMLDivElement} element 
  */
-export const calculatorApp = (element) => {
-    console.log('calculator');
+export const CalculatorApp = (element) => {
+    renderTemplate(element);
 }
