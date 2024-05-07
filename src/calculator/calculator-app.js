@@ -1,4 +1,5 @@
 import { renderTemplate } from './presentation/render-template/render-template';
+import { operations } from './use-cases/operations';
 
 /**
  * 
@@ -6,4 +7,5 @@ import { renderTemplate } from './presentation/render-template/render-template';
  */
 export const CalculatorApp = (element) => {
     renderTemplate(element);
+    operations();
 }
