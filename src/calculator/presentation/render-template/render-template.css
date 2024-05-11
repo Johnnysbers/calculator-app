@@ -67,10 +67,27 @@
     background-color: #3b3b3b;
 }
 
+.operator:active {
+    background-color: #323232;
+    color: #cecece;
+    border: 1px solid #3b3b3b;
+}
+
 .number:hover {
     background-color: #323232;
 }
 
+.number:active {
+    background-color: #282828;
+    color: #cecece;
+    border: 1px solid #3b3b3b;
+}
+
 .equal:hover {
     background-color: #797877;
+}
+
+.equal:active {
+    background-color: #6f6e6d;
+    color: #474646;
 }
