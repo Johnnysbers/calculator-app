@@ -15,15 +15,15 @@ export const operations = () => {
     const currentOpText    = document.querySelector('[data-current-op]');
 
     // Variables
-    let currentOperation = ''
+    let currentOperation = '';
     let prevOperation    = '';
-    let operation        = undefined;
+    let operator         = undefined;
 
     // Funciones de la calculadora
     const deleteAll = () => {
         currentOperation = '';
         prevOperation    = '';
-        operation        = undefined;
+        operator         = undefined;
         updateDisplay();
     }
 
@@ -35,6 +35,16 @@ export const operations = () => {
     const deleteOne = () => {
         currentOperation = currentOperation.toString().slice(0, -1);
         updateDisplay();
+    }
+
+    const plusMinus = () => {
+        if (Math.sign(currentOperation) === 1) {
+            currentOperation = -Math.abs(currentOperation);
+            currentOpText.innerHTML = -Math.abs(currentOperation);
+        } else {
+            currentOperation = Math.abs(currentOperation);
+            currentOpText.innerHTML = Math.abs(currentOperation);
+        }
     }
 
     const appendNumber = (number) => {
@@ -49,7 +59,7 @@ export const operations = () => {
             compute();
         }
 
-        operation        = op;
+        operator         = op;
         prevOperation    = currentOperation;
         currentOperation = '';
     }
@@ -61,7 +71,7 @@ export const operations = () => {
 
         if (isNaN(prev) || isNaN(current)) return;
 
-        switch (operation) {
+        switch (operator) {
             case '+':
                 computation = prev + current;
                 break;
@@ -80,7 +90,7 @@ export const operations = () => {
 
         currentOperation = computation;
         prevOperation    = '';
-        operation        = undefined;
+        operator         = undefined;
     }
 
     const getDisplayNumber = (number) => {
@@ -107,8 +117,8 @@ export const operations = () => {
     const updateDisplay = () => {
         currentOpText.innerText = getDisplayNumber(currentOperation);
 
-        if (operation != null) {
-            prevOpText.innerText = `${getDisplayNumber(prevOperation)} ${operation}`;
+        if (operator != null) {
+            prevOpText.innerText = `${getDisplayNumber(prevOperation)} ${operator}`;
         } else {
             prevOpText.innerText = '';
         }
@@ -118,6 +128,7 @@ export const operations = () => {
     deleteAllButton.addEventListener('click', deleteAll);
     deleteButton.addEventListener('click', deleteCurrent);
     deleteOneButton.addEventListener('click', deleteOne);
+    plusMinusButton.addEventListener('click', plusMinus);
 
     numberButtons.forEach(number => {
         number.addEventListener('click', () => {
