@@ -104,7 +104,7 @@ export const operations = () => {
         if (isNaN(integerDigits)) {
             integerDisplay = '';
         } else {
-            integerDisplay = integerDigits.toLocaleString('es', {maximumFractionDigits: 0})
+            integerDisplay = integerDigits.toLocaleString('es', {maximumFractionDigits: 0});
         }
 
         if (decimalDigits != null) {
